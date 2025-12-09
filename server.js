@@ -1,8 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
+const path = require('path');               
 const { createClient } = require('@supabase/supabase-js');
 const bcrypt = require('bcrypt');
+
 
 const SALT_ROUNDS = 12;
 const app = express();

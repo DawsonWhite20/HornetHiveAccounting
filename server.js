@@ -7,7 +7,14 @@ const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 12;
 const app = express();
 // Force a dev port that isn't in use:
-const PORT = 3333;
+const PORT = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname, 'public'))); // move your HTML/JS/CSS to 'public/'
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'HornetHiveLogin.html')); // or main login page
+});
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 /*
    ULTRA-PERMISSIVE CORS for local dev (no cookies used)

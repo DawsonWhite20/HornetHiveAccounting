@@ -14,8 +14,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'HornetHiveLogin.html')); // or main login page
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
 /*
    ULTRA-PERMISSIVE CORS for local dev (no cookies used)
    - Always sets Access-Control-Allow-Origin: *
